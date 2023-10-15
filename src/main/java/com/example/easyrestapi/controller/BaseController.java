@@ -16,11 +16,13 @@ public class BaseController {
     @Autowired
     private BaseService service;
 
+    // include spaces
     @GetMapping("/{input}")
     public ResponseEntity getOccurrences(@PathVariable String input){
             return service.getOccurrences(input);
     }
 
+    // exclude spaces
     @GetMapping("/ns/{input}")
     public ResponseEntity getOccurrencesWithoutSpaces(@PathVariable String input){
         return service.getOccurrencesWithoutSpaces(input);
